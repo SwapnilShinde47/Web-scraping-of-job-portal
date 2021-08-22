@@ -43,6 +43,10 @@ def extract_job_title_from_result(soup):
     # The function will target specific html elements of the fetched html document to scrape the required data. 
     # In our case, the document contains 15 entries of job profiles in single html document so to scrape data through every job section, we
     # iterate same logic used for scraping one job profile section multiple times using for loop.
+    if (soup.find_all(name="div", attrs={"class":"bad_query"}) or soup.find_all(name="div", attrs={"class":"invalid_location"})):
+        print("Invalid Query! Please enter correct job profile and location.")
+        webbrowser.open_new_tab(r"C:\Users\meswa\Desktop\indeed final\colorlib-error-404-11\index.html")
+        return [[]]
     for div in soup.find_all(name="div", attrs={"class":"slider_container"}):
         if(i==1):
             print("***************************************************")
