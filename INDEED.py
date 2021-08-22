@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 import csv
 import re
 import io
+import webbrowser
+
 def customURL():
     job = input("Enter the job post that you want to apply for:\n").strip()
     location= input("Enter the desired location:\n").strip()
@@ -138,6 +140,8 @@ a.to_html(r"C:\Users\meswa\Desktop\indeed final\indexindeed.html")
 # assign it to a
 # variable (string)
 # html_file = a.to_html()
+
+webbrowser.open_new_tab(r"C:\Users\meswa\Desktop\indeed final\indexindeed.html")
 
 
 
